@@ -91,6 +91,7 @@
     "node": ">=0.10.0"
   },
   "scripts": {
-    "test": "grunt test"
+    "postinstall": "webdriver-manager update",
+    "test": "make test-ci"
   }
 }
