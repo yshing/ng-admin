@@ -5,6 +5,7 @@ install:
 
 run:
 	@cp node_modules/angular/angular.min.js examples/blog/build/angular.min.js
+	@cp node_modules/fakerest/dist/FakeRest.min.js examples/blog/build/fakerest.js
 	@cp node_modules/sinon/pkg/sinon-server-1.14.1.js examples/blog/build/sinon-server.js
 	@./node_modules/webpack-dev-server/bin/webpack-dev-server.js --minimize --colors --devtool cheap-module-inline-source-map --content-base examples/blog --port 8000
 
@@ -24,5 +25,7 @@ test-e2e:
 
 test-ci:
 	@cp node_modules/angular/angular.min.js examples/blog/build/angular.min.js
+	@cp node_modules/fakerest/dist/FakeRest.min.js examples/blog/build/fakerest.js
 	@cp node_modules/sinon/pkg/sinon-server-1.14.1.js examples/blog/build/sinon-server.js
+	@make build
 	@./node_modules/.bin/grunt test
