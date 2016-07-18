@@ -93,6 +93,9 @@ CrudModule.factory('notification', function () {
     var humane = require('humane-js');
     humane.timeout = 5000;
     humane.clickToClose = true;
+    if (window){
+      window.humane=humane;
+    }
     return humane;
 });
 
